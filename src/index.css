@@ -22,8 +22,7 @@
   }
 
   html {
-    font-size: 18px;
-    /* Increased from default 16px to scale UI up */
+    font-size: 16px;
   }
 
   html,

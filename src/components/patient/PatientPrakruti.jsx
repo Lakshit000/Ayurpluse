@@ -362,13 +362,13 @@ const AnalysisSummary = ({ result, onViewTracking }) => {
     return (
         <div className="space-y-8 animate-in fade-in duration-700">
             {/* Hero Card */}
-            <div className="bg-emerald-900 rounded-[3rem] p-12 text-white relative overflow-hidden shadow-2xl shadow-emerald-200">
+            <div className="bg-emerald-900 rounded-3xl p-8 text-white relative overflow-hidden shadow-2xl shadow-emerald-200">
                 <div className="relative z-10 flex flex-col md:flex-row items-center gap-12">
                     <div className="flex-1 text-center md:text-left space-y-6">
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-800/50 rounded-full text-xs font-black tracking-widest uppercase border border-emerald-700/50 shadow-inner">
                             <Sparkles className="w-4 h-4 text-emerald-400" /> Analysis Complete
                         </div>
-                        <h3 className="text-5xl md:text-7xl font-black tracking-tight leading-none uppercase">
+                        <h3 className="text-3xl md:text-5xl font-black tracking-tight leading-none uppercase">
                             Your type is <br />
                             <span className="text-emerald-400">{result.type}</span>
                         </h3>
@@ -377,7 +377,7 @@ const AnalysisSummary = ({ result, onViewTracking }) => {
                         </p>
                     </div>
 
-                    <div className="w-64 h-64 md:w-80 md:h-80 relative flex items-center justify-center">
+                    <div className="w-48 h-48 md:w-64 md:h-64 relative flex items-center justify-center">
                         <div className="absolute inset-0 bg-emerald-400/20 rounded-full blur-[80px] animate-pulse" />
                         <svg className="w-full h-full transform -rotate-90">
                             <circle cx="50%" cy="50%" r="45%" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="12" />
@@ -406,7 +406,7 @@ const AnalysisSummary = ({ result, onViewTracking }) => {
             {/* Dosha Breakdown Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {['Vata', 'Pitta', 'Kapha'].map((dosha) => (
-                    <div key={dosha} className="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm transition-transform hover:-translate-y-1">
+                    <div key={dosha} className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm transition-transform hover:-translate-y-1">
                         <div className="flex items-center justify-between mb-6">
                             <div className="text-xs font-black tracking-widest text-gray-400 uppercase">{dosha}</div>
                             <div className={`text-2xl font-black ${dosha === 'Vata' ? 'text-emerald-600' : dosha === 'Pitta' ? 'text-orange-500' : 'text-blue-500'}`}>
