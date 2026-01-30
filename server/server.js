@@ -8,6 +8,9 @@ import nodemailer from 'nodemailer';
 import crypto from 'crypto';
 import { Jimp } from 'jimp';
 import PDFDocument from 'pdfkit';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
 
 
 dotenv.config();
@@ -1888,6 +1891,20 @@ app.get('/api/medicines/search', (req, res) => {
 });
 
 
+
+// --- Serve Frontend (Production Only) ---
+if (process.env.NODE_ENV === 'production') {
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+
+    // Serve static files from dist folder
+    app.use(express.static(path.join(__dirname, '../dist')));
+
+    // Catch-all handle for SPA
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '../dist', 'index.html'));
+    });
+}
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
