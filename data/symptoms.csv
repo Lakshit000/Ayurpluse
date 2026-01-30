@@ -1,0 +1,18 @@
+symptom_id,disease_id,symptom_type,symptom_description
+S001,D001,vital,Redness and tenderness at eyelid margin
+S002,D001,vital,Small round swollen lesion
+S003,D002,vital,Sticky eyes with discharge
+S004,D002,other,Photophobia
+S005,D003,vital,Foreign body sensation
+S006,D003,vital,Photophobia
+S007,D004,vital,Weakness of one side of face
+S008,D005,vital,Wrist hangs flaccidly
+S009,D006,vital,Aura lasts 1–2 minutes
+S010,D006,vital,Loss of consciousness with frothing
+S011,D007,vital,Burning and tingling in feet
+S012,D007,other,Numbness and muscle cramps
+
+S030,D008,Vital,High body temperature (Jwara vega)
+S031,D008,General,Loss of appetite (Aruchi)
+S032,D008,General,Body ache (Angamarda)
+S033,D008,General,Excessive Thirst (Trishna)

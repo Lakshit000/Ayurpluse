@@ -1,0 +1,10 @@
+investigation_id,disease_id,investigation_name
+I001,D001,Check refractive error
+I002,D002,Clinical diagnosis
+I003,D003,Check blood sugar
+I004,D004,Clinical diagnosis
+I005,D005,Nerve conduction study
+I006,D006,MRI Brain
+I007,D006,EEG
+I008,D007,Blood sugar HbA1c
+I009,D007,Nerve conduction study

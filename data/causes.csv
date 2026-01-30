@@ -1,0 +1,15 @@
+cause_id,disease_id,cause_description
+C001,D001,Streptococcal infection
+C002,D001,Blepharitis
+C003,D002,Viral bacterial or fungal infection
+C004,D003,Corneal injury
+C005,D003,Vitamin A and protein deficiency
+C006,D004,Viral infection causing nerve pressure
+C007,D004,Cold exposure
+C008,D005,Radial nerve injury
+C009,D006,High fever
+C010,D006,Metabolic disorders
+C011,D007,Uncontrolled diabetes mellitus
+
+C020,D008,Indigestion (Ajirna)
+C021,D008,Seasonal changes (Ritu sandhi)
