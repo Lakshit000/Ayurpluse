@@ -1,0 +1,11 @@
+treatment_id,disease_id,treatment_principle
+T001,D001,Kapha hara rakta prasādana cikitsa
+T002,D002,Pitta kapha hara cikitsa
+T003,D003,Tikta kaṣāya rasa pradhāna cikitsa
+T004,D004,Avaraṇa vāta cikitsa
+T005,D005,Vātānulomana and snehana
+T006,D006,Vata kapha apasmara cikitsa
+T007,D007,Dhātu gata vāta cikitsa
+
+T008,D008,Langhana (Fasting) to handle Ama
+T009,D008,Pachana (Digestive herbs)

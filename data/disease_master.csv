@@ -1,0 +1,9 @@
+disease_id,disease_name_english,disease_name_ayurvedic,dosha_involvement,body_system,brief_description
+D001,Stye,Kumbhika Pidaka,Kapha Rakta,Eye,A painful tender swelling at the edge of eyelid caused by kapha and rakta predominance
+D002,Conjunctivitis,Netra Abhishyanda,Pitta Kapha,Eye,Inflammatory condition of conjunctiva with discharge and redness
+D003,Corneal Ulcer,Krishna Mandala Vrana,Pitta,Eye,Ulcerative lesion of cornea associated with pain and photophobia
+D004,Bell's Palsy,Ardita,Vata Kapha,Nervous System,Unilateral facial paralysis due to vata disturbance
+D005,Acute Wrist Drop,,Vata,Nervous System,Loss of wrist extension due to radial nerve involvement
+D006,Complex Partial Seizure,Vata Kapha Apasmara,Vata Kapha,Nervous System,Seizure disorder with loss of consciousness and aura
+D007,Diabetic Neuropathy,Prameha Upadravam,Vata Kapha,Nervous System,Peripheral nerve damage secondary to diabetes
+D008,Fever,Jwara,Tridosha,Whole Body,Rise in body temperature due to imbalance of doshas affecting Agni

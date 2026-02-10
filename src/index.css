@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: "Outfit", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+
+    --font-serif: "Playfair Display", ui-serif, Georgia, Cambria,
+      "Times New Roman", Times, serif;
+
+    /* Ayurvedic palette */
+    --ayur-bg: #fbf8f1;
+    --ayur-paper: #fffdf8;
+    --ayur-green: #2f6b4f;
+    --ayur-green-2: #4c8f5d;
+    --ayur-amber: #e8b35a;
+    --ayur-rose: #d9a7a3;
+    --ayur-ink: #101828;
+  }
+
+  html {
+    font-size: 16px;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--ayur-ink);
+    overflow-x: hidden;
+    background: radial-gradient(1200px 600px at 15% 15%,
+        rgba(232, 179, 90, 0.18),
+        transparent 55%),
+      radial-gradient(900px 500px at 80% 28%,
+        rgba(76, 143, 93, 0.18),
+        transparent 55%),
+      radial-gradient(900px 500px at 70% 80%,
+        rgba(217, 167, 163, 0.16),
+        transparent 55%),
+      linear-gradient(180deg, #fffdf8 0%, var(--ayur-bg) 55%, #f6f3ea 100%);
+  }
+
+  /* Subtle handmade paper texture */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.35;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.12'/%3E%3C/svg%3E");
+  }
+
+  /* Herbal leaf watermark (Ayurvedic touch) */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.14;
+    background-size: 420px 420px;
+    background-position: 0 0;
+    background-repeat: repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='420' height='420' viewBox='0 0 420 420' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%232f6b4f' stroke-opacity='0.25' stroke-width='1.2'%3E%3Cpath d='M64 120c38 6 52 28 48 52-4 24-28 42-66 40 8-28 10-66 18-92z'/%3E%3Cpath d='M338 72c-34 12-46 40-36 66 10 26 42 36 76 18-18-24-26-56-40-84z'/%3E%3Cpath d='M108 340c40-10 58-34 52-58-6-24-38-38-78-20 14 24 16 52 26 78z'/%3E%3Cpath d='M306 310c-30-2-58 14-58 40 0 26 26 44 66 42-4-26-2-54-8-82z'/%3E%3Cpath d='M78 240c34-10 56-2 64 16-22 4-44 12-64 20z'/%3E%3Cpath d='M350 250c-30-14-54-12-68 0 24 6 46 14 68 24z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+
+  /* Premium Ayurvedic glass effect */
+  .glass-panel {
+    background: rgba(255, 253, 248, 0.72);
+    border: 1px solid rgba(47, 107, 79, 0.12);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 18px 45px rgba(16, 24, 40, 0.08);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.66);
+    border: 1px solid rgba(47, 107, 79, 0.12);
+    backdrop-filter: blur(14px);
+    box-shadow:
+      0 24px 60px rgba(16, 24, 40, 0.09),
+      inset 0 0 24px rgba(255, 255, 255, 0.55);
+    transition: transform 250ms ease, box-shadow 250ms ease;
+  }
+
+  .glass-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      0 30px 80px rgba(16, 24, 40, 0.12),
+      inset 0 0 24px rgba(255, 255, 255, 0.55);
+  }
+
+  /* Ayurvedic badge */
+  .ayur-badge {
+    @apply inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold tracking-wide;
+    background: rgba(47, 107, 79, 0.08);
+    border: 1px solid rgba(47, 107, 79, 0.18);
+    color: #2f6b4f;
+  }
+
+  /* Warm premium button */
+  .btn-ayur {
+    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold transition-all;
+    background: linear-gradient(135deg, #2f6b4f 0%, #4c8f5d 100%);
+    color: white;
+    box-shadow: 0 18px 35px rgba(47, 107, 79, 0.22);
+  }
+
+  .btn-ayur:hover {
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+  }
+
+  .btn-ayur:active {
+    transform: translateY(0px);
+  }
+
+  /* Typography helpers */
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  .text-shadow-soft {
+    text-shadow: 0 10px 30px rgba(16, 24, 40, 0.18);
+  }
+
+  /* Floating herb animation for icons/decors */
+  @keyframes floaty {
+    0% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-8px);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  .floaty {
+    animation: floaty 4s ease-in-out infinite;
+  }
+
+  @keyframes scan {
+    0% {
+      top: 0;
+    }
+
+    100% {
+      top: 100%;
+    }
+  }
+
+  .animate-scan {
+    animation: scan 3s linear infinite;
+  }
+
+  @keyframes draw-path {
+    from {
+      stroke-dashoffset: 1000;
+    }
+
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .animate-draw-path {
+    stroke-dasharray: 1000;
+    animation: draw-path 4s ease-out forwards;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(47, 107, 79, 0.1);
+    border-radius: 10px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(47, 107, 10, 0.2);
+  }
+
+  .text-reveal {
+    animation: text-reveal 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  }
+
+  @keyframes text-reveal {
+    0% {
+      transform: translateY(100%);
+    }
+
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
+  .input-focus-ring {
+    @apply focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500/50 transition-all duration-300;
+  }
+}

@@ -1,0 +1,10 @@
+mapping_id,disease_id,medicine_id,usage_type,stage
+DM001,D001,M001,internal,acute
+DM002,D001,M003,internal,general
+DM003,D002,M002,internal,acute
+DM004,D004,M004,internal,chronic
+DM005,D007,M005,internal,chronic
+
+DM020,D008,M006,Curative,Acute
+DM021,D008,M007,Curative,Acute
+DM022,D008,M003,Supportive,Convalescence

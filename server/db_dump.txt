@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Test User",
+    "email": "test@example.com",
+    "role": "patient"
+  },
+  {
+    "id": 2,
+    "name": "Lakshit",
+    "email": "lakshitvinay10b@gmail.com",
+    "role": "doctor"
+  },
+  {
+    "id": 3,
+    "name": "vindhu",
+    "email": "vindhuhallermahendrakumar2005@gmail.com",
+    "role": "doctor"
+  },
+  {
+    "id": 4,
+    "name": "samartha",
+    "email": "samartha@gamil.com",
+    "role": "doctor"
+  },
+  {
+    "id": 5,
+    "name": "saniya",
+    "email": "saniya@gmail.com",
+    "role": "patient"
+  },
+  {
+    "id": 6,
+    "name": "Dr. Smith",
+    "email": "doctor@ayurpulse.com",
+    "role": "doctor"
+  },
+  {
+    "id": 7,
+    "name": "Test Patient",
+    "email": "testpatient123@example.com",
+    "role": "patient"
+  },
+  {
+    "id": 8,
+    "name": "pallakh",
+    "email": "pallakh@gmail.com",
+    "role": "patient"
+  },
+  {
+    "id": 9,
+    "name": "Dr. Demo",
+    "email": "doc@demo.com",
+    "role": "doctor"
+  },
+  {
+    "id": 10,
+    "name": "Demo Patient",
+    "email": "patient@demo.com",
+    "role": "patient"
+  },
+  {
+    "id": 11,
+    "name": "Dr. Demo Two",
+    "email": "doc2@demo.com",
+    "role": "doctor"
+  },
+  {
+    "id": 12,
+    "name": "Dr. Smith",
+    "email": "doctor@example.com",
+    "role": "doctor"
+  },
+  {
+    "id": 13,
+    "name": "shiny",
+    "email": "shinymarshal05@gamil.com",
+    "role": "doctor"
+  },
+  {
+    "id": 14,
+    "name": "Dr. Aditi",
+    "email": "doctor@test.com",
+    "role": "doctor"
+  },
+  {
+    "id": 15,
+    "name": "John Patient",
+    "email": "patient@test.com",
+    "role": "patient"
+  },
+  {
+    "id": 16,
+    "name": "lakshith",
+    "email": "laks@gmail.com",
+    "role": "doctor"
+  }
+]

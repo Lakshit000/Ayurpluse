@@ -1,0 +1,9 @@
+medicine_id,medicine_name,dosage,timing,form,anupana,manufacturer
+M001,Patolādi kaṣāyam,60 ml,morning and night before food,kaṣāyam,NULL,NULL
+M002,Gudūcyādi kaṣāyam,60 ml,morning and night before food,kaṣāyam,NULL,NULL
+M003,Triphala cūrṇam,1 tsp,night after food,cūrṇam,warm water,NULL
+M004,Kalyānaka gudam,20 gm,9.30 am weekly,gudam,warm water,NULL
+M005,Bhadradarvadi kaṣāyam,60 ml,morning and night before food,kaṣāyam,NULL,NULL
+
+M006,Sudarshan Churna,1 tsp,three times a day,churna,warm water,Dabur
+M007,Amrutottaram Kashayam,15 ml,morning and evening before food,kashayam,warm water,Kottakkal

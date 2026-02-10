@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AyurPulse Debug Test</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .status {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-family: monospace;
+        }
+
+        .success {
+            background: rgba(46, 213, 115, 0.2);
+            border-left: 4px solid #2ed573;
+        }
+
+        .error {
+            background: rgba(255, 71, 87, 0.2);
+            border-left: 4px solid #ff4757;
+        }
+
+        .info {
+            background: rgba(52, 152, 219, 0.2);
+            border-left: 4px solid #3498db;
+        }
+
+        button {
+            background: #2ed573;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 5px;
+        }
+
+        button:hover {
+            background: #26de81;
+        }
+
+        #log {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .log-entry {
+            margin: 5px 0;
+            font-size: 14px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🌿 AyurPulse Frontend Debug</h1>
+
+        <div class="status info">
+            <strong>Testing Connection to:</strong><br>
+            Frontend: http://localhost:5174<br>
+            Backend: http://localhost:5000
+        </div>
+
+        <div>
+            <button onclick="testFrontend()">Test Frontend Server</button>
+            <button onclick="testBackend()">Test Backend API</button>
+            <button onclick="testLogin()">Test Doctor Login</button>
+            <button onclick="clearLog()">Clear Log</button>
+        </div>
+
+        <div id="log"></div>
+    </div>
+
+    <script>
+        function log(message, type = 'info') {
+            const logDiv = document.getElementById('log');
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            const timestamp = new Date().toLocaleTimeString();
+
+            const color = type === 'success' ? '#2ed573' : type === 'error' ? '#ff4757' : '#3498db';
+            entry.innerHTML = `<span style="color: ${color}">[${timestamp}]</span> ${message}`;
+
+            logDiv.appendChild(entry);
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+
+        function clearLog() {
+            document.getElementById('log').innerHTML = '';
+        }
+
+        async function testFrontend() {
+            log('Testing frontend server...', 'info');
+            try {
+                const response = await fetch('http://localhost:5174');
+                if (response.ok) {
+                    log('✅ Frontend server is running!', 'success');
+                    const html = await response.text();
+                    if (html.includes('AyurPulse')) {
+                        log('✅ HTML contains AyurPulse title', 'success');
+                    } else {
+                        log('⚠️ HTML does not contain expected content', 'error');
+                    }
+                } else {
+                    log(`❌ Frontend returned status: ${response.status}`, 'error');
+                }
+            } catch (error) {
+                log(`❌ Failed to connect to frontend: ${error.message}`, 'error');
+            }
+        }
+
+        async function testBackend() {
+            log('Testing backend API...', 'info');
+            try {
+                const response = await fetch('http://localhost:5000/api/settings');
+                if (response.ok) {
+                    log('✅ Backend API is running!', 'success');
+                    const data = await response.json();
+                    log(`Backend settings: ${JSON.stringify(data)}`, 'info');
+                } else {
+                    log(`❌ Backend returned status: ${response.status}`, 'error');
+                }
+            } catch (error) {
+                log(`❌ Failed to connect to backend: ${error.message}`, 'error');
+            }
+        }
+
+        async function testLogin() {
+            log('Testing doctor login...', 'info');
+            try {
+                const response = await fetch('http://localhost:5000/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: 'arushi@gmail.com',
+                        password: 'test123'
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    log('✅ Login successful!', 'success');
+                    log(`User data: ${JSON.stringify(data, null, 2)}`, 'success');
+                } else {
+                    log(`❌ Login failed: ${data.message}`, 'error');
+                }
+            } catch (error) {
+                log(`❌ Login request failed: ${error.message}`, 'error');
+            }
+        }
+
+        // Auto-run tests on load
+        window.onload = function () {
+            log('🚀 AyurPulse Frontend Debugger Loaded', 'success');
+            log('Click buttons above to run tests', 'info');
+        };
+    </script>
+</body>
+
+</html>
